@@ -1,24 +1,36 @@
-import { Flex } from '@chakra-ui/react';
+'use client';
 
-import CTASection from '~/lib/components/samples/CTASection';
-import SomeImage from '~/lib/components/samples/SomeImage';
-import SomeText from '~/lib/components/samples/SomeText';
+import { Flex } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+
+import Hero from '~/lib/components/hero';
 
 const Home = () => {
   return (
-    <Flex
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      minHeight="70vh"
-      gap={4}
-      mb={8}
-      w="full"
+    <motion.div
+      initial="pageInitial"
+      animate="pageAnimate"
+      variants={{
+        pageInitial: {
+          opacity: 0,
+        },
+        pageAnimate: {
+          opacity: 1,
+        },
+      }}
     >
-      <SomeText />
-      <SomeImage />
-      <CTASection />
-    </Flex>
+      <Flex
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        minHeight="70vh"
+        gap={4}
+        mb={8}
+        w="full"
+      >
+        <Hero />
+      </Flex>
+    </motion.div>
   );
 };
 

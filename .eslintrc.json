@@ -3,5 +3,11 @@
     "sznm/react",
     "plugin:react/jsx-runtime",
     "plugin:@next/next/recommended"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "no-empty-pattern": "off",
+    "react/self-closing-comp": "off"
+  }
 }
